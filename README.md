@@ -34,6 +34,7 @@ Allows users to edit a product.
 ### Parameters
 | Field | Type | Description |
 | :---: | :---: | :---: |
+| id | int | The id of the product to be edited |
 | name | String | The new name of the product |
 | price | double | The new price of the product  ($) |
 | description | String | The new description of the product |
