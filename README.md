@@ -10,7 +10,7 @@ A backend that allows inventory tracking for a logistics company
 # Endpoints
 ## "/addProduct"
 ### Description
-Allows the addition of a new product to the inventory
+Allows the addition of a new product to the inventory.
 ### Parameters
 | Field | Type | Description |
 | :---: | :---: | :---: |
@@ -21,3 +21,19 @@ Allows the addition of a new product to the inventory
 ## "/getAllProducts"
 ### Description
 No paramters. Returns a list of all the product currently in the inventory.
+## "/deleteProduct/{id}"
+### Description 
+Allows the deletion of a product given it's id.
+### Parameters
+| Field | Type | Description |
+| :---: | :---: | :---: |
+| id | int | id of the product to be deleted |
+## "/editProduct"
+### Description
+Allows users to edit a product.
+### Parameters
+| Field | Type | Description |
+| :---: | :---: | :---: |
+| name | String | The new name of the product |
+| price | double | The new price of the product  ($) |
+| description | String | The new description of the product |
