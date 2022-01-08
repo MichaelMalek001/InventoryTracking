@@ -1,5 +1,8 @@
 package com.michael.malek;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +34,16 @@ public class ProductService {
 		product.setFilePath(fileLocation);
 		repo.save(product);
 		return ResponseEntity.ok("File Uploaded Successfully");
+	}
+	
+	public ResponseEntity<List<FileResource>> getAllImages(){
+		List<Product> allProducts =  repo.findAll();
+		List<FileResource> allFileResources = new LinkedList<FileResource>(); 
+		for (Product product : allProducts) {
+			FileResource fileResource = Utils.productToFileResource(product);
+			allFileResources.add(fileResource);
+		}
+		return ResponseEntity.ok().body(allFileResources);
 	}
 	
 
